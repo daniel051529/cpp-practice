@@ -1,0 +1,37 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+//dynamic memory allocation
+
+int main() {
+    cout << "班級數:";
+    int ClassNum;
+    cin >> ClassNum;
+   
+    int **pScores; 
+    pScores = new int*[ClassNum]; // new 一個母陣列(指標)
+   
+    int *pStudentNum;
+    pStudentNum = new int[ClassNum]; //每個指標
+   
+    for (int i = 0; i < ClassNum; i++) {
+        cout << "第" << i+1 << "班人數";
+        cin >> pStudentNum[i];
+        pScores[i] = new int[pStudentNum[i]];
+    }
+    for (int i = 0; i < ClassNum; i++) {
+        for (int j = 0; j < pStudentNum[i]; j++){
+            cout << "成績:";
+            cin >> pScores[i][j];
+        }
+    }
+    for (int i = 0; i < ClassNum; i++) {
+        for (int j = 0; j < pStudentNum[i]; j++){
+            cout << pScores[i][j] << ",";
+        }
+        cout << endl;
+    }
+    delete [] pStudentNum;
+}
+
