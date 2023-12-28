@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+#define CLASS_NUM 3
+#define STUDENT_NUM 5
+
+int main() {
+    int scores[CLASS_NUM][STUDENT_NUM];
+    
+    for (int i = 0; i < CLASS_NUM; i++) {
+        for (int j = 0; j < STUDENT_NUM; j++) {
+        cout << "輸入第" << i+1 << "班第" << j+1 << "位同學成績: ";
+        cin >> scores[i][j];
+        }
+    }
+    
+    int sums[CLASS_NUM], failed[CLASS_NUM]; //三班一維陣列
+    for (int i = 0; i < CLASS_NUM; i++) {
+        sums[i] = 0;
+        failed[i] = 0;
+    }
+    
+    
+    for (int i = 0; i < CLASS_NUM; i++) {
+        for (int j = 0; j < STUDENT_NUM; j++) {
+            sums[i] += scores[i][j];
+            if (scores[i][j] < 60) failed[i]++;
+        } 
+    
+    }
+    for (int i = 0; i < CLASS_NUM; i++) {
+        cout << "第" << i+1 << "班: " << endl;
+        cout << "總分: " << sums[i] << endl;
+        cout << "平均: " << sums[i]/double(STUDENT_NUM) << endl;
+        cout << "不及格: " << failed[i] << endl;
+        }
+    return 0;
+    }
