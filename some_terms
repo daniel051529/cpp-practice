@@ -1,0 +1,53 @@
+Constructor
+Destructor
+Inheritance
+scope
+static
+pointer: uses memory address as its tool (manipulate memory address
+call by reference: direct access to the variable (not a copy), modification will affect the original. can be put in parameters like this: modifyValue(int& ref), then be called by passing in a number: modifyValue(num).
+polymorphism
+
+
+example using pointer
+#include <iostream>
+using namespace std;
+
+int x = 123;
+int *ptr = &x; //&: address of x
+int y = *ptr;
+int &ref1 = x;
+int &ref2 = y;
+
+void point() {
+    for (int i = 1; i < 10; i++) {
+        cout << i;
+    }
+    cout << endl << "pointer: " << y << endl;
+    cout << "pass by ref x: " << ref1 << endl;
+    cout << "pass by ref y: " << ref2 << endl;
+} 
+
+int main() {
+    point();
+    return 0;
+}
+
+int main() {
+    int x = 123;
+    int *pX = &x; //first initialization
+    int grabp = *pX; //second initialization
+    cout << pX << endl;
+    cout << x << endl;
+    cout << grabp << endl;
+    
+}
+
+
+
+
+Data type:
+
+Nodes:
+Linked list
+Tree
+
