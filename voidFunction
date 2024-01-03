@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void sayHi(string name) {
+    cout << "Hi " << name << "." << endl;
+    cout << "The game begins shortly. Please wait a moment." << endl;
+}
+
+int main() {
+    // Write C++ code here
+    string name;
+    cout << "enter your name: ";
+    cin >> name;
+    sayHi(name);
+    return 0;
+}
