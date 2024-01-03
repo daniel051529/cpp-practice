@@ -1,0 +1,25 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "學生人數: ";
+    int num, *pScores = NULL; //initialize the input variable, array pointer
+    cin >> num; //the length of the array
+     
+    pScores = new int[num]; //initialize the actial array with parameter that defines its length. (with memory allocation in mind)
+    
+    if (pScores == NULL) {
+        cout << "Memory allocation error" << endl;
+        return 1;
+    }
+    for (int i = 1; i < num; i++) {
+        cout << "第" << i+1 << "位同學成績: ";
+        cin << *(pScores + i); //enter the ith element in the pScores array
+    }
+    int max = 0, failed = 0;
+    
+    for (int i = 1; i < num; i++) {
+        if (*(pScores+i) >= max) {max 
+    }
+    
