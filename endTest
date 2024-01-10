@@ -3,23 +3,31 @@
 using namespace std;
 
 int main() {
+    int num, *pScores = NULL; //num: 學生人數
     cout << "學生人數: ";
-    int num, *pScores = NULL; //initialize the input variable, array pointer
-    cin >> num; //the length of the array
-     
-    pScores = new int[num]; //initialize the actial array with parameter that defines its length. (with memory allocation in mind)
+    cin >> num; //變數指示器
+    
+    //new array (dynamically created)
+    //新陣列：共有num個空位的陣列
+    pScores = new int[num];
     
     if (pScores == NULL) {
-        cout << "Memory allocation error" << endl;
+        cout << "memory allocation error";
         return 1;
     }
-    for (int i = 1; i < num; i++) {
-        cout << "第" << i+1 << "位同學成績: ";
-        cin << *(pScores + i); //enter the ith element in the pScores array
+    for (int i = 0; i < num; i++) {
+        cout << "第" << i+1 << "位同學成績:" ;
+        cin >> *(pScores + i); //陣列空位指示器
     }
     int max = 0, failed = 0;
     
-    for (int i = 1; i < num; i++) {
-        if (*(pScores+i) >= max) {max 
+    for (int i = 0; i < num; i++) {
+        if (*(pScores + i) > max) max = *(pScores + i);
+        if (*(pScores + i) < 60) failed++;
     }
+    cout << "最高分: " << max << endl;
+    cout << "不及格: " << failed << endl;
+    
+    delete[] pScores;
+}
     
